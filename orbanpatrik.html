@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbán Patrik — Esküvői fotó és videó, Győr</title>
+<meta name="description" content="Orbán Patrik esküvői fotós és videós, Győr. Esküvő, mini esküvő, jegyes és családi fotózás, esküvői videózás — csomagok, árak, galéria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --esp:#241D18;
+  --esp-soft:#332A23;
+  --ivory:#F7F2EA;
+  --ivory-deep:#EFE7DA;
+  --brass:#A67C43;
+  --stone:#8B857C;
+  --text:#3B332C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;font-weight:300;color:var(--text);background:var(--ivory);line-height:1.75;font-size:17px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:400;line-height:1.15;color:var(--esp)}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--brass)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;transition:background .35s,box-shadow .35s,padding .35s}
+nav.scrolled{background:rgba(247,242,234,.97);box-shadow:0 1px 0 rgba(36,29,24,.1);padding:11px 5vw}
+.brand{font-family:'Fraunces',serif;font-size:21px;color:#fff;transition:color .3s;line-height:1.1}
+.brand small{display:block;font-family:'Figtree',sans-serif;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.75);transition:color .3s}
+nav.scrolled .brand{color:var(--esp)}
+nav.scrolled .brand small{color:var(--brass)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:#fff;transition:color .3s}
+nav.scrolled ul a{color:var(--esp)}
+nav ul a:hover{color:var(--brass)}
+.nav-toggle{display:none}
+
+/* HERO */
+header{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--esp)}
+header .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+header::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(36,29,24,.42) 0%, rgba(36,29,24,.06) 40%, rgba(36,29,24,.82) 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 5vw 10vh;max-width:1180px;margin:0 auto;width:100%;color:#fff}
+.hero-inner .eyebrow{color:#D8B888;display:block;margin-bottom:14px}
+.hero-inner h1{font-size:clamp(42px,7vw,86px);color:#fff;font-weight:300;margin-bottom:10px}
+.hero-inner h1 em{font-style:italic;color:#E8CBA0}
+.hero-inner p.sub{font-size:clamp(16px,2vw,19px);max-width:52ch;margin-bottom:34px;color:#EDE4D6}
+.btn{display:inline-block;background:var(--brass);color:#fff;padding:15px 40px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;border:1px solid var(--brass);transition:background .3s,border-color .3s}
+.btn:hover{background:#8E6835;border-color:#8E6835}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.65);margin-left:12px}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.dark{background:var(--esp);border-color:var(--esp)}
+.btn.dark:hover{background:var(--esp-soft);border-color:var(--esp-soft)}
+
+section{padding:105px 5vw}
+.wrap{max-width:1140px;margin:0 auto}
+
+/* Intro */
+.intro{text-align:center;padding:110px 5vw 90px}
+.intro .wrap{max-width:820px}
+.intro h2{font-size:clamp(30px,4vw,46px);margin:14px 0 22px}
+.intro p{color:#544A40}
+
+/* Chapter (service) */
+.chapter{padding:95px 5vw}
+.chapter.alt{background:var(--ivory-deep)}
+.ch-grid{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center;margin-bottom:56px}
+.ch-grid.flip{grid-template-columns:6fr 5fr}
+.ch-grid img{width:100%;box-shadow:20px 20px 0 rgba(166,124,67,.14)}
+.ch-grid.flip img{box-shadow:-20px 20px 0 rgba(166,124,67,.14)}
+.chapter h2{font-size:clamp(32px,4.4vw,52px);margin:12px 0 20px}
+.chapter h2 em{font-style:italic;color:var(--brass)}
+.chapter .lead{color:#544A40;max-width:56ch}
+.mini-list{list-style:none;margin-top:18px}
+.mini-list li{padding-left:22px;position:relative;margin-bottom:6px;font-size:16px;color:#544A40}
+.mini-list li::before{content:"—";position:absolute;left:0;color:var(--brass)}
+
+/* Price cards */
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.price-card{background:#fff;border:1px solid rgba(36,29,24,.1);padding:38px 34px;display:flex;flex-direction:column}
+.chapter.alt .price-card{background:var(--ivory)}
+.price-card h3{font-size:25px;margin-bottom:4px}
+.price-card .tagline{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:20px}
+.price-card ul{list-style:none;flex:1;margin-bottom:24px}
+.price-card li{font-size:15px;color:#544A40;padding:7px 0;border-bottom:1px solid rgba(36,29,24,.07)}
+.price-card li:last-child{border-bottom:none}
+.price-card .price{font-family:'Fraunces',serif;font-size:30px;color:var(--esp)}
+.price-card .price small{font-size:14px;font-family:'Figtree',sans-serif;color:var(--stone)}
+.price-card.featured{background:var(--esp);border-color:var(--esp)}
+.price-card.featured h3,.price-card.featured .price{color:#fff}
+.price-card.featured li{color:#D9CFC2;border-color:rgba(255,255,255,.1)}
+.price-card.featured .tagline{color:#D8B888}
+
+/* Photo divider band */
+.band{position:relative;height:52vh;min-height:340px;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.band::after{content:"";position:absolute;inset:0;background:rgba(36,29,24,.18)}
+
+/* Video */
+.video-embed{position:relative;padding-top:56.25%;margin-top:46px;background:#000}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* Gallery */
+.gallery h2{font-size:clamp(32px,4.4vw,50px);margin:12px 0 46px}
+.masonry{columns:3;column-gap:20px}
+.masonry img{width:100%;margin-bottom:20px;break-inside:avoid;transition:opacity .3s}
+.masonry img:hover{opacity:.9}
+
+/* About / team */
+.about{background:var(--esp);color:#D9CFC2}
+.about .eyebrow{color:#D8B888}
+.about-grid{display:grid;grid-template-columns:4fr 7fr;gap:66px;align-items:center}
+.about-grid img{width:100%;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.about h2{font-size:clamp(32px,4.4vw,50px);color:#fff;margin:12px 0 22px}
+.about p{margin-bottom:16px}
+.team{margin-top:70px}
+.team h3{font-size:26px;color:#fff;margin-bottom:30px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.member{background:var(--esp-soft);padding:28px;text-align:center}
+.member img,.member .mono{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px}
+.member .mono{display:flex;align-items:center;justify-content:center;background:var(--brass);color:#fff;font-family:'Fraunces',serif;font-size:34px}
+.member h4{color:#fff;font-size:20px}
+.member p{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#D8B888;margin-top:4px}
+
+/* Testimonials */
+.testi h2{font-size:clamp(32px,4.4vw,50px);margin:12px 0 50px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.t-card{background:#fff;border:1px solid rgba(36,29,24,.1);padding:34px 30px}
+.t-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:18px}
+.t-card p{font-size:15px;color:#544A40;margin-bottom:18px}
+.t-card .who{font-family:'Fraunces',serif;font-size:19px;color:var(--esp)}
+
+/* FAQ */
+.faq{background:var(--ivory-deep)}
+.faq h2{font-size:clamp(32px,4.4vw,50px);margin:12px 0 44px}
+.faq details{background:var(--ivory);border:1px solid rgba(36,29,24,.1);margin-bottom:12px}
+.faq summary{cursor:pointer;padding:20px 26px;font-family:'Fraunces',serif;font-size:19px;color:var(--esp);list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--brass);font-family:'Figtree',sans-serif}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 26px 22px;font-size:15px;color:#544A40}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:66px;align-items:start}
+.contact h2{font-size:clamp(32px,4.4vw,50px);margin:12px 0 20px}
+.contact p.lead{margin-bottom:34px;max-width:44ch;color:#544A40}
+.c-item{margin-bottom:24px}
+.c-item .label{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--brass);margin-bottom:3px}
+.c-item a,.c-item span{font-family:'Fraunces',serif;font-size:23px;color:var(--esp)}
+.c-item a:hover{color:var(--brass)}
+.contact-img{box-shadow:20px 20px 0 rgba(166,124,67,.14)}
+
+footer{background:var(--esp);color:#9C9187;text-align:center;padding:60px 5vw 42px}
+footer .f-brand{font-family:'Fraunces',serif;font-size:24px;color:#fff}
+footer .f-brand small{display:block;font-family:'Figtree',sans-serif;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);margin-top:4px}
+footer p{font-size:13px;margin-top:18px}
+footer .fine{margin-top:8px;font-size:12px;opacity:.6}
+footer a{color:#D8B888}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+@media (max-width:900px){
+  section,.chapter{padding:76px 6vw}
+  .ch-grid,.ch-grid.flip,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .team-grid,.testi-grid{grid-template-columns:1fr}
+  .masonry{columns:2;column-gap:14px}
+  .masonry img{margin-bottom:14px}
+  .btn.ghost{margin-left:0;margin-top:12px}
+  nav ul{display:none}
+  nav.open ul{display:flex;position:fixed;inset:0;background:var(--esp);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:59}
+  nav.open ul a{color:#fff;font-size:15px}
+  .nav-toggle{display:block;z-index:61;background:none;border:0;width:34px;height:26px;position:relative;cursor:pointer}
+  .nav-toggle span{position:absolute;left:0;right:0;height:2px;background:#fff;transition:all .3s}
+  nav.scrolled .nav-toggle span{background:var(--esp)}
+  nav.open .nav-toggle span{background:#fff}
+  .nav-toggle span:nth-child(1){top:0}
+  .nav-toggle span:nth-child(2){top:12px}
+  .nav-toggle span:nth-child(3){top:24px}
+  nav.open .nav-toggle span:nth-child(1){top:12px;transform:rotate(45deg)}
+  nav.open .nav-toggle span:nth-child(2){opacity:0}
+  nav.open .nav-toggle span:nth-child(3){top:12px;transform:rotate(-45deg)}
+}
+@media (max-width:520px){
+  .masonry{columns:1}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top">Orbán Patrik<small>Fotó &amp; Videó · Győr</small></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+  <ul id="navMenu">
+    <li><a href="#eskuvo">Esküvő</a></li>
+    <li><a href="#mini">Mini esküvő</a></li>
+    <li><a href="#jegyes">Jegyes</a></li>
+    <li><a href="#csaladi">Családi</a></li>
+    <li><a href="#video">Videó</a></li>
+    <li><a href="#rolam">Rólam</a></li>
+    <li><a href="#kapcsolat">Kapcsolat</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+  <img class="hero-img" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000000-00dee00def/Kreat%C3%ADv-45.JPG?ph=6459bdd7ae" alt="Kreatív esküvői páros fotó">
+  <div class="hero-inner">
+    <span class="eyebrow">Esküvői fotó és videó · Győr és környéke</span>
+    <h1>A ti napotok, <em>ahogy ti éltétek meg</em></h1>
+    <p class="sub">Örökítsük meg úgy a pillanatokat, hogy bármikor nézitek vissza a képeket, ugyanúgy csaljanak mosolyt az arcotokra, könnyet a szemetekbe, ahogyan azt aznap tették.</p>
+    <a class="btn" href="#kapcsolat">Ajánlatot kérek</a><a class="btn ghost" href="#eskuvo">Csomagok</a>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap reveal">
+    <span class="eyebrow">Kedves menyasszony, kedves vőlegény!</span>
+    <h2>Örülök, hogy rám találtatok</h2>
+    <p>Már mindent aprólékosan megterveztetek, és „csak" egy fotós kell? Vagy tele vagytok kérdésekkel, de szeretnétek elindulni a szervezés rögös útjain, és a fotóst lefixálni? Bárhogy is legyen, a legjobb helyen jártok. Felesleges mellébeszélés és váratlan ajánlatok helyett konkrétumokkal és kész csomagokkal készülök — ha pedig egyedi elképzelésetek van, egyszerűen csak kérjetek visszahívást, és mindent megbeszélünk.</p>
+  </div>
+</section>
+
+<div class="band"><img src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000004-369e9369ea/DSC04545.jpg?ph=6459bdd7ae" alt=""></div>
+
+<section class="chapter" id="eskuvo">
+  <div class="wrap">
+    <div class="ch-grid">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000240-4231e4231f/464142535_529486946715253_987908823309845759_n.jpeg?ph=6459bdd7ae" alt="Ifjú pár esküvői fotózáson">
+      <div class="reveal">
+        <span class="eyebrow">Esküvő fotózás</span>
+        <h2>Életetek egyik <em>legszebb napja</em></h2>
+        <p class="lead">Az esküvő fotózása bizalmi kérdés. Célom, hogy a nagy nap minden fontos pillanata megmaradjon — a készülődés izgalmától a hajnali mulatozásig, természetesen és őszintén.</p>
+      </div>
+    </div>
+    <div class="prices">
+      <div class="price-card reveal">
+        <h3>Kis Esküvő</h3>
+        <div class="tagline">Szertartás + csoportképek</div>
+        <ul>
+          <li>Kreatív páros fotózás</li>
+          <li>Polgári szertartás megörökítése</li>
+          <li>Egyházi szertartás megörökítése</li>
+          <li>Csoportképek készítése</li>
+          <li>Gratuláció fotók</li>
+          <li>Legalább 300–400 db retusált kép</li>
+          <li>Online galéria</li>
+        </ul>
+        <div class="price">250 000 Ft</div>
+      </div>
+      <div class="price-card featured reveal">
+        <h3>Nagy Esküvő</h3>
+        <div class="tagline">Egész napos csomag</div>
+        <ul>
+          <li>Egész napos rendelkezésre állás</li>
+          <li>Kreatív páros fotózás</li>
+          <li>Készülődés megörökítése</li>
+          <li>Polgári és egyházi szertartás</li>
+          <li>Csoportképek és gratuláció fotók</li>
+          <li>Lakodalom megörökítése</li>
+          <li>Legalább 500–700 retusált kép</li>
+          <li>Gravírozott, díszdobozos pendrive</li>
+          <li>Online galéria</li>
+        </ul>
+        <div class="price">290 000 Ft</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter alt" id="mini">
+  <div class="wrap">
+    <div class="ch-grid flip">
+      <div class="reveal">
+        <span class="eyebrow">Mini esküvő</span>
+        <h2>Meghitt esküvők <em>őszinte pillanatokkal</em></h2>
+        <p class="lead">Ha számotokra az élmény, az intimitás és az együtt megélt pillanatok fontosabbak, mint a nagy felhajtás, akkor ez a csomag nektek szól:</p>
+        <ul class="mini-list">
+          <li>10–30 fős, meghitt esküvőt terveztek</li>
+          <li>nem szeretnétek egész napos fotózást</li>
+          <li>fontos a kreatív páros fotózás</li>
+          <li>természetes, őszinte képeket szeretnétek, nem feszengést</li>
+        </ul>
+      </div>
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000071-48f2b48f2c/DSC02874.jpg?ph=6459bdd7ae" alt="Meghitt pillanat egy kis létszámú esküvőn">
+    </div>
+    <div class="prices">
+      <div class="price-card reveal">
+        <h3>Mini Esküvő csomag</h3>
+        <div class="tagline">Átadás 1–2 héten belül</div>
+        <ul>
+          <li>2–3 óra rendelkezésre állás</li>
+          <li>Kreatív páros fotózás (előtte vagy utána)</li>
+          <li>A szertartás teljes fotózása</li>
+          <li>Családi és baráti csoportképek</li>
+          <li>Gondosan válogatott, utómunkázott képek</li>
+          <li>Online galéria</li>
+        </ul>
+        <div class="price">90 000 Ft</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="jegyes">
+  <div class="wrap">
+    <div class="ch-grid">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000231-d509ad509c/DSC06580.jpeg?ph=6459bdd7ae" alt="Jegyespár fotózáson">
+      <div class="reveal">
+        <span class="eyebrow">Jegyes fotózás</span>
+        <h2>A közös utatok <em>első állomása</em></h2>
+        <p class="lead">A jegyes fotózásra sokan úgy gondolnak, mint egy páros fotózásra — pedig ennél több: a kapcsolatotok az eljegyzéssel új szintre lép. Remek alkalom, hogy belekóstoljatok ebbe a világba, és rájöjjetek: rólatok is lehet őszinte és szuper képeket készíteni.</p>
+      </div>
+    </div>
+    <div class="prices">
+      <div class="price-card reveal">
+        <h3>Jegyes csomag</h3>
+        <div class="tagline">Ismerkedés a kamerával</div>
+        <ul>
+          <li>1 óra fotózás</li>
+          <li>Maximum 2 helyszín</li>
+          <li>Legalább 30 db átadott kép</li>
+          <li>Online galéria</li>
+        </ul>
+        <div class="price">45 000 Ft</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter alt" id="csaladi">
+  <div class="wrap">
+    <div class="ch-grid flip">
+      <div class="reveal">
+        <span class="eyebrow">Családi fotózás</span>
+        <h2>Pillanatok, amik <em>gyorsan elrepülnek</em></h2>
+        <p class="lead">Családi fotózásokat főleg a saját stúdiómban készítek, de a szabadban is szívesen örökítem meg a együtt töltött pillanatokat — kötetlenül, játékosan, hogy a gyerekek is jól érezzék magukat.</p>
+      </div>
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000083-b4875b4877/DSC06638.JPG?ph=6459bdd7ae" alt="Családi fotózás a szabadban">
+    </div>
+    <div class="prices">
+      <div class="price-card reveal">
+        <h3>Alap csomag</h3>
+        <div class="tagline">Szabadtéren vagy stúdióban</div>
+        <ul>
+          <li>1 óra fotózás</li>
+          <li>20 db teljeskörűen retusált kép</li>
+          <li>Válogató galéria</li>
+          <li>Kész képek átadása online galérián keresztül</li>
+          <li>További képek vásárlása: +2 000 Ft/db</li>
+        </ul>
+        <div class="price">38 000 Ft</div>
+      </div>
+      <div class="price-card featured reveal">
+        <h3>Prémium csomag</h3>
+        <div class="tagline">Minden jó kép a tiétek</div>
+        <ul>
+          <li>1 óra fotózás — szabadtéren vagy stúdióban</li>
+          <li>Az összes jól sikerült kép kidolgozásra kerül</li>
+          <li>Legalább 40 db teljeskörűen retusált kép</li>
+          <li>Kész képek átadása online galérián keresztül</li>
+        </ul>
+        <div class="price">43 000 Ft</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="video">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Esküvő videózás</span>
+      <h2>Amikor a kép <em>önmagában nem elég</em></h2>
+      <p class="lead">Vannak pillanatok, amiket mozgásban, hanggal együtt érdemes megőrizni. Ezeket adom át olyan formában, hogy mindig élmény legyen újra és újra visszanézni — 4K minőségben, drónfelvételekkel.</p>
+    </div>
+    <div class="prices" style="margin-top:46px">
+      <div class="price-card reveal">
+        <h3>Highlights csomag</h3>
+        <div class="tagline">5–10 perces kisfilm</div>
+        <ul>
+          <li>Légi felvételek (drón)</li>
+          <li>Készülődés és kreatív páros videózás</li>
+          <li>Polgári és templomi szertartás</li>
+          <li>Lakodalom hajnal 1 óráig</li>
+          <li>Összefoglaló kisfilm zenei aláfestéssel</li>
+          <li>4K minőség · díszdobozos pendrive</li>
+        </ul>
+        <div class="price">270 000 Ft</div>
+      </div>
+      <div class="price-card reveal">
+        <h3>Classic csomag</h3>
+        <div class="tagline">Kisfilm + hosszú vágás</div>
+        <ul>
+          <li>Minden, ami a Highlights csomagban</li>
+          <li>+ hosszabb nyers videó (kb. 1–1,5 órás kisfilm)</li>
+          <li>4K minőség · díszdobozos pendrive</li>
+        </ul>
+        <div class="price">350 000 Ft</div>
+      </div>
+    </div>
+    <div class="prices" style="margin-top:26px">
+      <div class="price-card featured reveal">
+        <h3>Lakodalom csomag</h3>
+        <div class="tagline">Fotó és videó együtt</div>
+        <ul>
+          <li>Egész napos rendelkezésre állás</li>
+          <li>Fotó és videó egy csapattól — drónnal</li>
+          <li>Legalább 500–700 retusált kép</li>
+          <li>5–10 perces összefoglaló kisfilm, 4K</li>
+          <li>Gravírozott pendrive · online galéria</li>
+        </ul>
+        <div class="price">540 000 Ft</div>
+      </div>
+      <div class="price-card featured reveal">
+        <h3>Lakodalom Extra</h3>
+        <div class="tagline">Fotó + videó + hosszú vágás</div>
+        <ul>
+          <li>Minden, ami a Lakodalom csomagban</li>
+          <li>+ hosszabb nyers videó (kb. 1–1,5 óra)</li>
+          <li>4K minőség · pendrive · online galéria</li>
+        </ul>
+        <div class="price">590 000 Ft</div>
+      </div>
+    </div>
+    <div class="video-embed reveal">
+      <iframe src="https://www.youtube-nocookie.com/embed/MaPQFUTEINM" title="Esküvői kisfilm — Orbán Patrik" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <span class="eyebrow">Galéria</span>
+    <h2>Munkáim</h2>
+    <div class="masonry">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000001-5e7845e785/Kreat%C3%ADv-47.JPG?ph=6459bdd7ae" alt="Kreatív esküvői fotó">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000077-be984be986/KEP08970.jpg?ph=6459bdd7ae" alt="Jegyes fotózás">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000241-45ab745ab9/DSC03758-4.jpeg?ph=6459bdd7ae" alt="Esküvői pillanat">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000099-b587fb5881/DSC09946-2.jpg?ph=6459bdd7ae" alt="Családi fotózás">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000249-db84cdb84d/DS200143.jpeg?ph=6459bdd7ae" alt="Jegyespár naplementében">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000014-3f5c03f5c1/Kreat%C3%ADv-62.JPG?ph=6459bdd7ae" alt="Kreatív páros fotó">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000025-10c1110c13/KEP08300.jpg?ph=6459bdd7ae" alt="Jegyes fotózás Győrben">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000124-ceeecceeed/image-crop-200000091-8.jpeg?ph=6459bdd7ae" alt="Családi pillanat">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="rolam">
+  <div class="wrap">
+    <div class="about-grid">
+      <img class="reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000118-2ce1d2ce1e/69830046_3204447369571641_2045111839779454976_n.jpg?ph=6459bdd7ae" alt="Orbán Patrik fotós portréja">
+      <div class="reveal">
+        <span class="eyebrow">Rólam</span>
+        <h2>Szia! Patrik vagyok</h2>
+        <p>Győrben élek a feleségemmel és két kislányommal. Egy jó barátomnak köszönhetően kerültem közel a fotózáshoz, 2019-ben pedig Budapesten hivatalosan is fotográfus végzettséget szereztem — amihez esküvőről esküvőre járva rengeteg tapasztalat társult. Még ugyanebben az évben belevágtam a videózás világába, azóta gyakran videósként is járom az esküvőket.</p>
+        <p>Főleg Győr környékén vállalok megbízásokat, de szívesen utazom bárhová. Semmi sem elképzelhetetlen — csak keress fel!</p>
+      </div>
+    </div>
+    <div class="team">
+      <h3>A csapat</h3>
+      <div class="team-grid">
+        <div class="member reveal">
+          <img src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000118-2ce1d2ce1e/69830046_3204447369571641_2045111839779454976_n.jpg?ph=6459bdd7ae" alt="Orbán Patrik">
+          <h4>Orbán Patrik</h4>
+          <p>Fotó · Videó</p>
+        </div>
+        <div class="member reveal">
+          <img src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000272-4f1fe4f200/_A7N0863_%282%29.jpeg?ph=6459bdd7ae" alt="Németh Patrik">
+          <h4>Németh Patrik</h4>
+          <p>Videó</p>
+        </div>
+        <div class="member reveal">
+          <div class="mono">I</div>
+          <h4>Orbán-Pintér Ildikó</h4>
+          <p>Videó · Selfiegép</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi" id="velemenyek">
+  <div class="wrap">
+    <span class="eyebrow">Rólam mondtátok</span>
+    <h2>Párok, akikkel együtt dolgoztunk</h2>
+    <div class="testi-grid">
+      <div class="t-card reveal">
+        <img src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000152-99d9d99d9f/DSC06563%20m%C3%A1solat.jpeg?ph=6459bdd7ae" alt="Lilla és Márk">
+        <p>„Már az első alkalommal is profin, de ugyanakkor lazán, jó összhangban fotóztunk, a végeredmény már akkor is tökéletesre sikerült. A Nagy Napunkat is jó hangulatban örökítettük meg — biztos vagyok benne, hogy fogunk még keresni!"</p>
+        <div class="who">Lilla &amp; Márk</div>
+      </div>
+      <div class="t-card reveal">
+        <img src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000154-023aa023ab/DSC03758.jpeg?ph=6459bdd7ae" alt="Andi és Peti">
+        <p>„A képek gyönyörűek lettek. Tökéletes érzékkel kapta el a legjobb pillanatokat, és a többi szolgáltatónkkal is profi módon dolgozott együtt. Patrikot jó szívvel ajánljuk, mert emberileg és szakmailag is tökéletes."</p>
+        <div class="who">Andi &amp; Peti</div>
+      </div>
+      <div class="t-card reveal">
+        <img src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000150-80aab80aad/449000415_8466287153386052_8762974879775244906_n.jpeg?ph=6459bdd7ae" alt="Kriszti és Ádám">
+        <p>„A lehető legprofibb munkát kaptuk Tőle. Hihetetlen, hogy olyan pillanatokat is elkapott, amire nem is gondoltunk — nem tudtuk örömkönnyek nélkül végignézni az esküvői videónkat."</p>
+        <div class="who">Kriszti &amp; Ádám</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="gyik">
+  <div class="wrap">
+    <span class="eyebrow">Gyakori kérdések</span>
+    <h2>Amit tudni érdemes</h2>
+    <details>
+      <summary>Egyedül dolgozol az esküvőkön?</summary>
+      <p>Nem minden esetben. Ha egyszerre kértek fotózást és videózást, akkor velem tart Németh Patrik vagy Orbán-Pintér Ildikó, akik a videós felvételekért felelnek, míg én a fotózásra koncentrálok. Így minden pillanat professzionálisan megörökítésre kerül — képekben és mozgásban egyaránt.</p>
+    </details>
+    <details>
+      <summary>Mi a foglalás menete?</summary>
+      <p>Ha az ajánlatom elnyerte a tetszéseteket, a következő lépés egy személyes vagy online találkozó, ahol átbeszéljük a részleteket, és megtörténik a szerződéskötés. Ezután minden szervezetten és átláthatóan halad tovább.</p>
+    </details>
+    <details>
+      <summary>Mennyi az átadási határidő?</summary>
+      <p>Esküvői szolgáltatások esetében az átadási idő maximum 6 hét az esküvőtől számítva. MINI csomag esetében 1–2 hét.</p>
+    </details>
+    <details>
+      <summary>Milyen formában kapjuk meg a képeket és a videókat?</summary>
+      <p>A képeket egy gyönyörű online galériában kapjátok meg, amit könnyen megoszthattok a családdal és a barátokkal — a fotók egyesével és teljes galériaként is letölthetők. A videót először egy zárt YouTube-linken küldöm, majd pendrive-on is átadom a képekkel együtt.</p>
+    </details>
+    <details>
+      <summary>Meddig elérhető az online galéria?</summary>
+      <p>Az online galéria az átadástól számítva legalább 3 hónapig elérhető, így bőven lesz időtök letölteni és megosztani a képeket.</p>
+    </details>
+    <details>
+      <summary>Foglalót kell fizetni?</summary>
+      <p>Igen, a szerződéskötéskor 20% foglaló fizetése szükséges. Ezzel biztosítjátok, hogy az adott dátum kizárólag a tiétek legyen.</p>
+    </details>
+  </div>
+</section>
+
+<section class="contact" id="kapcsolat">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Kapcsolat</span>
+      <h2>Foglaljátok le a dátumot</h2>
+      <p class="lead">Írjátok meg, mikor és mit terveztek, és hamarosan jelentkezem a szabad időpontokkal és a részletekkel.</p>
+      <div class="c-item">
+        <div class="label">Telefon</div>
+        <a href="tel:+36306281010">+36 30 628 1010</a>
+      </div>
+      <div class="c-item">
+        <div class="label">E-mail</div>
+        <a href="mailto:info@orbanpatrik.hu">info@orbanpatrik.hu</a>
+      </div>
+      <div class="c-item">
+        <div class="label">Instagram</div>
+        <a href="https://instagram.com/patrikorban" rel="noopener">@patrikorban</a>
+      </div>
+      <div class="c-item">
+        <div class="label">Facebook</div>
+        <a href="https://www.facebook.com/orbanpatrikphotography" rel="noopener">Orbán Patrik Fotó és Videó</a>
+      </div>
+      <p style="margin-top:32px"><a class="btn dark" href="mailto:info@orbanpatrik.hu?subject=Ajánlatkérés">Ajánlatot kérek</a></p>
+    </div>
+    <img class="contact-img reveal" src="https://6459bdd7ae.clvaw-cdnwnd.com/47da878d976047bc23c29530f4ed915b/200000015-40f0f40f11/DSC06371.jpg?ph=6459bdd7ae" alt="Jegyespár fotózás közben">
+  </div>
+</section>
+
+<footer>
+  <div class="f-brand">Orbán Patrik<small>Fotó &amp; Videó · Győr</small></div>
+  <p><a href="https://instagram.com/patrikorban" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/orbanpatrikphotography" rel="noopener">Facebook</a></p>
+  <p class="fine">© 2026 Orbán Patrik Photo &amp; Videography. Minden jog fenntartva.</p>
+</footer>
+
+<script>
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){if(window.scrollY>60){nav.className='scrolled'+(nav.className.indexOf('open')>-1?' open':'')}else{nav.className=(nav.className.indexOf('open')>-1?'open':'')}},false);
+document.getElementById('navToggle').addEventListener('click',function(){if(nav.className.indexOf('open')>-1){nav.className=nav.className.replace('open','').trim()}else{nav.className=(nav.className+' open').trim()}});
+var links=document.querySelectorAll('#navMenu a');
+for(var i=0;i<links.length;i++){links[i].addEventListener('click',function(){nav.className=nav.className.replace('open','').trim()})}
+var reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12});
+  for(var j=0;j<reveals.length;j++){io.observe(reveals[j])}
+}else{
+  for(var k=0;k<reveals.length;k++){reveals[k].classList.add('in')}
+}
+</script>
+</body>
+</html>
