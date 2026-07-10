@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Csizmazia Zsolt — Esküvői fotós · Budapest és az egész ország</title>
+<meta name="description" content="Csizmazia Zsolt esküvői fotós — 11 év tapasztalat, akár 16 óra rendelkezésre állás, és minden elkészült kép a tiétek teljes felbontásban. Csomagok 258 000 Ft-tól.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17151A;
+  --ink-soft:#221F26;
+  --porcelain:#F5F1EA;
+  --porcelain-deep:#ECE6DB;
+  --wine:#7A2434;
+  --champagne:#C4A265;
+  --text:#37333B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Work Sans',sans-serif;font-weight:300;color:var(--text);background:var(--porcelain);line-height:1.75;font-size:17px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Prata',serif;font-weight:400;line-height:1.2;color:var(--ink)}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--wine)}
+.eyebrow.gold{color:var(--champagne)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;transition:background .35s,box-shadow .35s,padding .35s}
+nav.scrolled{background:rgba(245,241,234,.97);box-shadow:0 1px 0 rgba(23,21,26,.1);padding:11px 5vw}
+.brand{font-family:'Prata',serif;font-size:20px;color:#fff;transition:color .3s;line-height:1.1}
+.brand small{display:block;font-family:'Work Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--champagne);margin-top:3px}
+nav.scrolled .brand{color:var(--ink)}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:#fff;transition:color .3s}
+nav.scrolled ul a{color:var(--ink)}
+nav ul a:hover{color:var(--champagne)}
+.nav-toggle{display:none}
+
+/* HERO */
+header{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+header .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%}
+header::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(23,21,26,.45) 0%, rgba(23,21,26,.08) 42%, rgba(23,21,26,.85) 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 5vw 9vh;max-width:1180px;margin:0 auto;width:100%;color:#fff}
+.hero-inner .eyebrow{display:block;margin-bottom:16px}
+.hero-inner h1{font-size:clamp(36px,5.6vw,68px);color:#fff;margin-bottom:14px;max-width:20ch}
+.hero-inner h1 em{font-style:italic;color:var(--champagne)}
+.hero-inner p.sub{font-size:clamp(16px,2vw,19px);max-width:56ch;margin-bottom:34px;color:#E4DDD1}
+.btn{display:inline-block;background:var(--wine);color:#fff;padding:15px 42px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;border:1px solid var(--wine);transition:background .3s,border-color .3s}
+.btn:hover{background:#5E1A27;border-color:#5E1A27}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.6);margin-left:12px}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Stats strip */
+.stats{background:var(--ink);padding:0 5vw 70px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid rgba(255,255,255,.12);padding-top:50px}
+.stat{text-align:center}
+.stat .n{font-family:'Prata',serif;font-size:clamp(28px,3.4vw,42px);color:var(--champagne)}
+.stat .l{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B9B2BE;margin-top:6px}
+
+section{padding:105px 5vw}
+.wrap{max-width:1150px;margin:0 auto}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:4fr 7fr;gap:66px;align-items:center}
+.about-grid img{width:100%;background:var(--porcelain-deep);box-shadow:22px 22px 0 rgba(122,36,52,.1)}
+.about h2{font-size:clamp(30px,4.2vw,46px);margin:12px 0 22px}
+.about p{margin-bottom:16px}
+
+/* Promise panel */
+.promise{background:var(--ink);color:#E4DDD1;padding:100px 5vw}
+.promise h2{color:#fff;font-size:clamp(28px,3.8vw,42px);margin:12px 0 34px;max-width:24ch}
+.promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 44px;max-width:960px}
+.promise-grid div{padding-left:30px;position:relative;font-size:16px}
+.promise-grid div::before{content:"✓";position:absolute;left:0;color:var(--champagne);font-weight:600}
+
+/* Packages */
+.packages{background:var(--porcelain-deep)}
+.packages h2{font-size:clamp(30px,4.2vw,46px);margin:12px 0 14px}
+.packages .note{font-size:14px;color:#6E6862;margin-bottom:48px}
+.pk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.pk{background:var(--porcelain);border:1px solid rgba(23,21,26,.1);padding:36px 32px;display:flex;flex-direction:column}
+.pk h3{font-size:24px}
+.pk .price{font-family:'Prata',serif;font-size:29px;color:var(--wine);margin:6px 0 22px}
+.pk ul{list-style:none;flex:1}
+.pk li{font-size:15px;padding:8px 0 8px 24px;border-bottom:1px solid rgba(23,21,26,.07);position:relative}
+.pk li::before{content:"—";position:absolute;left:0;color:var(--champagne)}
+.pk li:last-child{border-bottom:none}
+.pk .gift{margin-top:20px;background:rgba(196,162,101,.14);border:1px dashed var(--champagne);padding:14px 16px;font-size:14px}
+.pk .gift b{color:var(--wine);font-weight:600}
+.pk.featured{background:var(--ink);border-color:var(--ink)}
+.pk.featured h3{color:#fff}
+.pk.featured .price{color:var(--champagne)}
+.pk.featured li{color:#CFC8C2;border-color:rgba(255,255,255,.1)}
+.pk .cta{margin-top:24px;text-align:center}
+
+/* Mini + Egyedi */
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.mini-card{background:var(--porcelain);border:1px solid rgba(23,21,26,.1);padding:36px 32px}
+.mini-card h3{font-size:23px;margin-bottom:6px}
+.mini-card .sub{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);font-weight:600;margin-bottom:20px}
+.rowline{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(23,21,26,.07);font-size:15px}
+.rowline span:last-child{white-space:nowrap;font-weight:500;color:var(--ink)}
+.mini-card .fine{font-size:13px;color:#6E6862;margin-top:16px}
+
+/* Extras */
+.extras h2{font-size:clamp(30px,4.2vw,46px);margin:12px 0 40px}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 50px}
+
+/* Gallery */
+.gallery{background:var(--ink)}
+.gallery h2{color:#fff;font-size:clamp(30px,4.2vw,46px);margin:12px 0 44px}
+.masonry{columns:3;column-gap:18px}
+.masonry img{width:100%;margin-bottom:18px;break-inside:avoid;transition:opacity .3s}
+.masonry img:hover{opacity:.88}
+
+/* Other services */
+.others h2{font-size:clamp(30px,4.2vw,46px);margin:12px 0 40px}
+.chip-grid{display:flex;flex-wrap:wrap;gap:12px}
+.chip{border:1px solid rgba(23,21,26,.22);padding:12px 24px;font-size:14px;letter-spacing:.06em;transition:background .3s,color .3s,border-color .3s}
+.chip:hover{background:var(--wine);border-color:var(--wine);color:#fff}
+
+/* Contact */
+.contact{background:var(--porcelain-deep)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:66px;align-items:start}
+.contact h2{font-size:clamp(30px,4.2vw,46px);margin:12px 0 20px}
+.contact p.lead{margin-bottom:32px;max-width:46ch}
+.c-item{margin-bottom:24px}
+.c-item .label{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--wine);margin-bottom:3px}
+.c-item a,.c-item span{font-family:'Prata',serif;font-size:22px;color:var(--ink)}
+.c-item a:hover{color:var(--wine)}
+.contact-img{box-shadow:-22px 22px 0 rgba(122,36,52,.1)}
+
+footer{background:var(--ink);color:#9B939F;text-align:center;padding:60px 5vw 42px}
+footer .f-brand{font-family:'Prata',serif;font-size:23px;color:#fff}
+footer .f-brand small{display:block;font-family:'Work Sans',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--champagne);margin-top:4px}
+footer p{font-size:13px;margin-top:16px}
+footer a{color:var(--champagne)}
+footer .fine{margin-top:8px;font-size:12px;opacity:.6}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+@media (max-width:920px){
+  section{padding:76px 6vw}
+  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:26px}
+  .about-grid,.contact-grid,.mini-grid,.ex-grid{grid-template-columns:1fr;gap:38px}
+  .promise-grid{grid-template-columns:1fr}
+  .masonry{columns:2;column-gap:12px}
+  .masonry img{margin-bottom:12px}
+  .btn.ghost{margin-left:0;margin-top:12px}
+  nav ul{display:none}
+  nav.open ul{display:flex;position:fixed;inset:0;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:59}
+  nav.open ul a{color:#fff;font-size:15px}
+  .nav-toggle{display:block;z-index:61;background:none;border:0;width:34px;height:26px;position:relative;cursor:pointer}
+  .nav-toggle span{position:absolute;left:0;right:0;height:2px;background:#fff;transition:all .3s}
+  nav.scrolled .nav-toggle span{background:var(--ink)}
+  nav.open .nav-toggle span{background:#fff}
+  .nav-toggle span:nth-child(1){top:0}
+  .nav-toggle span:nth-child(2){top:12px}
+  .nav-toggle span:nth-child(3){top:24px}
+  nav.open .nav-toggle span:nth-child(1){top:12px;transform:rotate(45deg)}
+  nav.open .nav-toggle span:nth-child(2){opacity:0}
+  nav.open .nav-toggle span:nth-child(3){top:12px;transform:rotate(-45deg)}
+}
+@media (max-width:520px){
+  .masonry{columns:1}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top">Csizmazia Zsolt<small>Esküvői fotós</small></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+  <ul id="navMenu">
+    <li><a href="#rolam">Rólam</a></li>
+    <li><a href="#csomagok">Csomagok</a></li>
+    <li><a href="#mini">Mini esküvő</a></li>
+    <li><a href="#extrak">Extrák</a></li>
+    <li><a href="#galeria">Galéria</a></li>
+    <li><a href="#kapcsolat">Kapcsolat</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+  <img class="hero-img" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Esk%C3%BCv%C5%91-fot%C3%B3z%C3%A1s-Budapest-Csizmazia-Zsolt-Big-Dream-Weddings-1.jpg" alt="Esküvői kreatív páros fotó — Csizmazia Zsolt">
+  <div class="hero-inner">
+    <span class="eyebrow gold">Esküvő fotózás · Budapest és az egész ország</span>
+    <h1>Minden pillanat, minden kép — <em>a tiétek</em></h1>
+    <p class="sub">11 éve főállásban fotózok esküvőket. A készülődéstől a menyecsketáncig veletek vagyok — akár 16 órán át —, és az összes elkészült képet teljes felbontásban megkapjátok. Nem csak a válogatottakat: mindet.</p>
+    <a class="btn" href="#csomagok">Csomagok és árak</a><a class="btn ghost" href="#kapcsolat">Írjatok nekem</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="n">11 év</div><div class="l">főállásban</div></div>
+    <div class="stat"><div class="n">4–6000</div><div class="l">kép esküvőnként</div></div>
+    <div class="stat"><div class="n">16 óra</div><div class="l">rendelkezésre állás</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">minden kép a tiétek</div></div>
+  </div>
+</div>
+
+<section id="rolam">
+  <div class="wrap about-grid">
+    <img class="reveal" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Esk%C3%BCv%C5%91-fot%C3%B3z%C3%A1s-Budapest-Csizmazia-Zsolt-Big-Dream-Weddings-3.jpg" alt="Kreatív esküvői fotó — Csizmazia Zsolt munkája">
+    <div class="about reveal">
+      <span class="eyebrow">Rólam</span>
+      <h2>Nem pózokat fotózok — pillanatokat</h2>
+      <p>Nem szeretném, hogy kellemetlenül érezzétek magatokat, ezért az erőltetett pózok helyett inkább megteremtem a jó hangulatot, hogy elfeledkezzetek arról, hogy fotóznak titeket. Az egész egy közös kirándulásnak fog hatni, ahol szinte észrevétlenül készülnek a képek — természetesen, magatokat adva.</p>
+      <p>Mivel az emlékeiteken kívül csak a fotók maradnak meg, többszörösen bebiztosított technikai háttérrel, modern, csúcsminőségű felszereléssel és 11 év esküvői tapasztalatával kísérem végig a Nagy Napotokat. Számlaképes vállalkozóként, megbízhatóan.</p>
+      <p>Az utómunkában több stílust képviselek — a végeredmény mindig a ti elképzeléseitek alapján készül.</p>
+    </div>
+  </div>
+</section>
+
+<div class="promise">
+  <div class="wrap">
+    <span class="eyebrow gold">Ez jár minden csomaghoz</span>
+    <h2>Amit minden párom megkap — csomagtól függetlenül</h2>
+    <div class="promise-grid">
+      <div class="reveal">Egész napos fotózás a készülődéstől a menyecsketáncig, akár éjjel 3-ig</div>
+      <div class="reveal">4000–6000 kép teljes felbontásban, már néhány nappal az esküvő után</div>
+      <div class="reveal">Online galéria, hogy bárkivel megoszthassátok</div>
+      <div class="reveal">Kreatív páros fotózás a ti stílusotokhoz igazítva — akár másik napon is</div>
+      <div class="reveal">Polgári és templomi szertartás, csoportképek, lagzi</div>
+      <div class="reveal">Igényes utómunka, a kiemelt képeken címlapfotó-minőségű retusálással</div>
+    </div>
+  </div>
+</div>
+
+<section class="packages" id="csomagok">
+  <div class="wrap">
+    <span class="eyebrow">Csomagok</span>
+    <h2>Esküvői csomagok és áraik</h2>
+    <p class="note">Az árak a 2026–2027-es szezonra vonatkoznak. Lent csak a csomagok közti különbségeket látjátok — a fenti alapok mindegyikben benne vannak.</p>
+    <div class="pk-grid">
+      <div class="pk reveal">
+        <h3>Silver</h3>
+        <div class="price">258 000 Ft</div>
+        <ul>
+          <li>600 választott kép utómunkával</li>
+          <li>ebből 200 db címlapfotó-retusálással</li>
+          <li>Mind fekete-fehér verzióban is</li>
+          <li>50% utalvány kismama/családi fotózásra</li>
+        </ul>
+        <div class="gift"><b>+ Ajándék:</b> jegyes fotózás választott helyszínen, az összes kép átadásával (kb. 150–300 db)</div>
+        <div class="cta"><a class="btn" href="https://www.csizmaziazsolt.com/eskuvo-fotozas-rendeles/">Ezt kérem</a></div>
+      </div>
+      <div class="pk featured reveal">
+        <h3>Gold</h3>
+        <div class="price">320 000 Ft</div>
+        <ul>
+          <li>800 választott kép utómunkával</li>
+          <li>ebből 400 db címlapfotó-retusálással</li>
+          <li>Mind fekete-fehér verzióban is</li>
+          <li>Jegyes fotózás választott helyszínen</li>
+          <li>Zenés slideshow 50 kedvenc képpel</li>
+          <li>50% utalvány kismama/családi fotózásra</li>
+        </ul>
+        <div class="gift"><b>+ Ajándék:</b> szelfigép 4 órára — korlátlan nyomtatással, fotósarokkal, kellékekkel</div>
+        <div class="cta"><a class="btn" href="https://www.csizmaziazsolt.com/eskuvo-fotozas-rendeles/">Ezt kérem</a></div>
+      </div>
+      <div class="pk reveal">
+        <h3>Aurora</h3>
+        <div class="price">320 000 Ft</div>
+        <ul>
+          <li>800 választott kép utómunkával</li>
+          <li>ebből 400 db címlapfotó-retusálással</li>
+          <li>Mind fekete-fehér verzióban is</li>
+          <li>Jegyes fotózás választott helyszínen</li>
+          <li>Zenés slideshow 50 kedvenc képpel</li>
+          <li>50% utalvány kismama/családi fotózásra</li>
+        </ul>
+        <div class="gift"><b>+ Ajándék:</b> 4K videófelvétel a szertartásokról és a nyitótáncról</div>
+        <div class="cta"><a class="btn" href="https://www.csizmaziazsolt.com/eskuvo-fotozas-rendeles/">Ezt kérem</a></div>
+      </div>
+      <div class="pk reveal">
+        <h3>Diamond</h3>
+        <div class="price">400 000 Ft</div>
+        <ul>
+          <li>900 választott kép utómunkával</li>
+          <li>ebből 500 db címlapfotó-retusálással</li>
+          <li>Képszám-korlát nélküli fotózás</li>
+          <li>Jegyes fotózás választott helyszínen</li>
+          <li>Kreatív fotózás akár két helyszínen</li>
+        </ul>
+        <div class="cta"><a class="btn" href="https://www.csizmaziazsolt.com/eskuvo-fotozas-rendeles/">Ezt kérem</a></div>
+      </div>
+      <div class="pk featured reveal">
+        <h3>Premium</h3>
+        <div class="price">550 000 Ft</div>
+        <ul>
+          <li>1000 választott kép utómunkával</li>
+          <li>ebből 600 db címlapfotó-retusálással</li>
+          <li>+ második fotós egész napra</li>
+          <li>Képszám-korlát nélküli fotózás</li>
+          <li>Jegyes fotózás + zenés slideshow</li>
+          <li>Leány- és legénybúcsú fotózása</li>
+        </ul>
+        <div class="gift"><b>+ Ajándék:</b> menyasszonyi autó — Tesla Model S</div>
+        <div class="cta"><a class="btn" href="https://www.csizmaziazsolt.com/eskuvo-fotozas-rendeles/">Ezt kérem</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mini">
+  <div class="wrap">
+    <span class="eyebrow">Kisebb esküvőre készültök?</span>
+    <h2 style="font-size:clamp(30px,4.2vw,46px);margin:12px 0 10px">Mini esküvői csomag és egyedi összeállítás</h2>
+    <div class="mini-grid">
+      <div class="mini-card reveal">
+        <h3>Mini esküvői csomag</h3>
+        <div class="sub">Hétfő–csütörtök (ünnepnapok kivételével)</div>
+        <div class="rowline"><span>Polgári szertartás fotózása</span><span>30 000 Ft</span></div>
+        <div class="rowline"><span>+ csoportképek</span><span>35 000 Ft</span></div>
+        <div class="rowline"><span>+ csoportképek + kreatív páros fotózás</span><span>55 000 Ft</span></div>
+        <div class="rowline"><span>Vacsora fotózása</span><span>10 000 Ft/óra</span></div>
+        <div class="rowline"><span>Készülődés fotózása</span><span>+10 000 Ft</span></div>
+        <p class="fine">Az összes elkészült kép átadása teljes felbontásban — külön költség nélkül.</p>
+      </div>
+      <div class="mini-card reveal">
+        <h3>Egyedileg összeállítható</h3>
+        <div class="sub">Minimum 4 elem választásával</div>
+        <div class="rowline"><span>Készülődés fotózása</span><span>60 000 Ft</span></div>
+        <div class="rowline"><span>Jegyes fotózás</span><span>60 000 Ft</span></div>
+        <div class="rowline"><span>Kreatív páros fotózás</span><span>60 000 Ft</span></div>
+        <div class="rowline"><span>Polgári szertartás</span><span>50 000 Ft</span></div>
+        <div class="rowline"><span>Templomi szertartás</span><span>50 000 Ft</span></div>
+        <div class="rowline"><span>Csoportképek</span><span>30 000 Ft</span></div>
+        <div class="rowline"><span>Lakodalom fotózása</span><span>100 000 Ft</span></div>
+        <p class="fine">Az összes kép átadása díjmentes. Finomhangolt kép: 200 Ft/db · címlapfotó-retusálás: 500 Ft/db.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="extras" id="extrak">
+  <div class="wrap">
+    <span class="eyebrow">Kiegészítők</span>
+    <h2>Választható extrák</h2>
+    <div class="ex-grid">
+      <div>
+        <div class="rowline reveal"><span>Szelfigép 4 órára, korlátlan nyomtatással + fotósarok</span><span>120 000 Ft</span></div>
+        <div class="rowline reveal"><span>4K videó a szertartásokról és a nyitótáncról</span><span>60 000 Ft</span></div>
+        <div class="rowline reveal"><span>Jegyes fotózás</span><span>60 000 Ft</span></div>
+        <div class="rowline reveal"><span>Zenés slideshow 50 kedvenc képpel</span><span>25 000 Ft</span></div>
+        <div class="rowline reveal"><span>Címlapfotó-minőségű plusz retusált kép</span><span>200 Ft/db</span></div>
+        <div class="rowline reveal"><span>Fotókönyv 50 választott képpel (20×30)</span><span>36 000 Ft</span></div>
+      </div>
+      <div>
+        <div class="rowline reveal"><span>Videós egész napra, akár drónfelvételekkel</span><span>210 000 Ft-tól</span></div>
+        <div class="rowline reveal"><span>Második fotós egész napra</span><span>120 000 Ft</span></div>
+        <div class="rowline reveal"><span>Fotósarok berendezése kellékekkel</span><span>30 000 Ft</span></div>
+        <div class="rowline reveal"><span>Leánybúcsú fotózása</span><span>80 000 Ft</span></div>
+        <div class="rowline reveal"><span>Legénybúcsú fotózása</span><span>80 000 Ft</span></div>
+        <div class="rowline reveal"><span>Papírkép (10×15)</span><span>120 Ft/db</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <span class="eyebrow gold">Galéria</span>
+    <h2>Ízelítő a munkáimból</h2>
+    <div class="masonry">
+      <img class="reveal" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Esk%C3%BCv%C5%91-fot%C3%B3z%C3%A1s-Budapest-Csizmazia-Zsolt-Big-Dream-Weddings-2.jpg" alt="Esküvői fotó — Big Dream Weddings">
+      <img class="reveal" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Csizmazia-Zsolt-esk%C3%BCv%C5%91i-fot%C3%B3s-Budapest-%C3%A9s-200-km-es-vonz%C3%A1sk%C3%B6r%C3%A9ben-2-1.jpg" alt="Esküvői pillanat">
+      <img class="reveal" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Csizmazia-Zsolt-esk%C3%BCv%C5%91i-fot%C3%B3s-Budapest-%C3%A9s-200-km-es-vonz%C3%A1sk%C3%B6r%C3%A9ben-2-2.jpg" alt="Esküvői fotózás Budapesten">
+      <img class="reveal" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Csizmazia-Zsolt-esk%C3%BCv%C5%91i-fot%C3%B3s-Budapest-%C3%A9s-200-km-es-vonz%C3%A1sk%C3%B6r%C3%A9ben-2-3.jpg" alt="Ifjú pár fotózása">
+      <img class="reveal" src="https://www.csizmaziazsolt.com/wp-content/uploads/2017/11/kreativ-fotozas-300x200.jpg" alt="Kreatív fotózás">
+    </div>
+  </div>
+</section>
+
+<section class="others">
+  <div class="wrap">
+    <span class="eyebrow">Nem csak esküvő</span>
+    <h2>További szolgáltatásaim</h2>
+    <div class="chip-grid reveal">
+      <a class="chip" href="https://www.csizmaziazsolt.com/kismama_fotozas/">Kismama és családi fotózás</a>
+      <a class="chip" href="https://www.csizmaziazsolt.com/paros-fotozas/">Páros fotózás</a>
+      <a class="chip" href="https://www.csizmaziazsolt.com/portfolio-fotozas/">Portfólió fotózás</a>
+      <a class="chip" href="https://www.csizmaziazsolt.com/termekfotozas/">Termékfotózás</a>
+      <a class="chip" href="https://www.csizmaziazsolt.com/uzleti-fotozas/">Üzleti fotózás</a>
+      <a class="chip" href="https://www.csizmaziazsolt.com/allatfotozas-2/">Állatfotózás</a>
+      <a class="chip" href="https://www.csizmaziazsolt.com/regi-fenykepek-restauralasa/">Régi fényképek restaurálása</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kapcsolat">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Kapcsolat</span>
+      <h2>Beszéljünk a Nagy Napról</h2>
+      <p class="lead">Budapest, Nyíregyháza, Pécs, Szeged, Győr, Debrecen — és az ország egész területén. Írjátok meg a dátumot és az elképzeléseiteket, hamarosan válaszolok.</p>
+      <div class="c-item">
+        <div class="label">Telefon</div>
+        <a href="tel:+36305223728">06 30 522 3728</a>
+      </div>
+      <div class="c-item">
+        <div class="label">E-mail</div>
+        <a href="mailto:info@csizmaziazsolt.com">info@csizmaziazsolt.com</a>
+      </div>
+      <div class="c-item">
+        <div class="label">Facebook</div>
+        <a href="https://www.facebook.com/csizmaziazsolt" rel="noopener">Csizmazia Zsolt</a>
+      </div>
+      <p style="margin-top:32px"><a class="btn" href="mailto:info@csizmaziazsolt.com?subject=Ajánlatkérés esküvő fotózásra">Ajánlatot kérek</a></p>
+    </div>
+    <img class="contact-img reveal" src="https://www.csizmaziazsolt.com/wp-content/gallery/eskuvo-fotozas-6-kep/Esk%C3%BCv%C5%91-fot%C3%B3z%C3%A1s-Budapest-Csizmazia-Zsolt-Big-Dream-Weddings-2.jpg" alt="Esküvői fotózás — Csizmazia Zsolt">
+  </div>
+</section>
+
+<footer>
+  <div class="f-brand">Csizmazia Zsolt<small>Esküvői fotós · Budapest</small></div>
+  <p><a href="https://www.facebook.com/csizmaziazsolt" rel="noopener">Facebook</a> · <a href="https://www.csizmaziazsolt.com/adatkezelesi-tajekoztato/" rel="noopener">Adatkezelési tájékoztató</a></p>
+  <p class="fine">© 2026 Csizmazia Zsolt · www.csizmaziazsolt.com · Minden jog fenntartva.</p>
+</footer>
+
+<script>
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){if(window.scrollY>60){nav.className='scrolled'+(nav.className.indexOf('open')>-1?' open':'')}else{nav.className=(nav.className.indexOf('open')>-1?'open':'')}},false);
+document.getElementById('navToggle').addEventListener('click',function(){if(nav.className.indexOf('open')>-1){nav.className=nav.className.replace('open','').trim()}else{nav.className=(nav.className+' open').trim()}});
+var links=document.querySelectorAll('#navMenu a');
+for(var i=0;i<links.length;i++){links[i].addEventListener('click',function(){nav.className=nav.className.replace('open','').trim()})}
+var reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12});
+  for(var j=0;j<reveals.length;j++){io.observe(reveals[j])}
+}else{
+  for(var k=0;k<reveals.length;k++){reveals[k].classList.add('in')}
+}
+</script>
+</body>
+</html>
